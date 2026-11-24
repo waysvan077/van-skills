@@ -1,0 +1,10 @@
+id: dogeos-heist
+name: Doge Grand Heist
+url: https://quest.dogeos.com/
+platform: custom
+steps:
+- goto: '{{url}}'
+- click: First Orders
+- dismiss: true
+- manual: finish the heist tutorial and daily quests
+- screenshot: dogeos

@@ -1,0 +1,35 @@
+# Autopilot loop. Everything here is a switch the operator owns.
+enabled: true
+tick_seconds: 120
+max_quests_per_run: 3
+active_hours: [7, 24]              # local time window; quiet outside it
+intervals:                         # minutes between module runs
+  radar_min: 25
+  follow_min: 180
+  quests_min: 8
+  daily_min: 480
+  warm_min: 240
+  faucet_min: 360
+  campaign_min: 720
+  chat_min: 240
+modules:
+  radar: true                      # monitor TG/X for new garapan
+  follow: true
+  warm: true                       # refresh cookies on logged-in platforms
+  quests: true                     # execute queued quests
+  daily: true                      # streaks + check-ins
+  faucet: true                     # keep testnet wallets fed
+  campaign: false                  # extra on-chain traffic (needs gas)
+  chat: false                      # Discord role grinding (ToS risk, run deliberately)
+limit_per_day:
+  quests: 25
+  tx: 40
+rate_windows:                      # per identity, [count, seconds]
+  follow: [40, 3600]
+  chat: [60, 3600]
+  message: [60, 3600]
+  join: [15, 3600]
+  tg_action: [30, 3600]
+  quest: [12, 3600]
+  tx: [20, 3600]
+  login: [6, 3600]

@@ -1,0 +1,10 @@
+id: zkunnamed-apply
+name: The Unnamed whitelist apply
+url: https://zkunnamed.xyz/apply/
+platform: custom
+steps:
+- goto: '{{url}}'
+- click: APPLY
+- form: {}
+- manual: paste your X post URL, tick the boxes, then Send application
+- screenshot: zkunnamed

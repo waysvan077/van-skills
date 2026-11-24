@@ -1,0 +1,14 @@
+id: stabilizer-faucet
+name: Stabilizer faucet + swap
+url: https://app.stabilizer.finance/swap
+platform: custom
+chain: sepolia
+cooldown_hours: 24
+steps:
+- goto: https://app.stabilizer.finance/faucet
+- dismiss: true
+- wallet:
+    connect: true
+- click: Claim
+- manual: then swap a small amount on the Swap tab
+- screenshot: stabilizer

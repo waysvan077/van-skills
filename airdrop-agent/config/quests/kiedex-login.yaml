@@ -1,0 +1,10 @@
+id: kiedex-login
+name: KieDex login
+url: https://www.kiedex.app/login
+platform: custom
+steps:
+- goto: '{{url}}'
+- form: {}
+- click: Sign in
+- manual: solve the Turnstile / email code if prompted
+- screenshot: kiedex

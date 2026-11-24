@@ -1,0 +1,11 @@
+id: qyro-manifest
+name: QyroLabs genesis manifest
+url: https://qyrolabs.space/
+platform: custom
+steps:
+- goto: '{{url}}'
+- dismiss: true
+- wallet:
+    connect: true
+- manual: complete the genesis manifest tasks
+- screenshot: qyro

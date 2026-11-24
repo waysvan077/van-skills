@@ -1,0 +1,13 @@
+# Quest index (optional). Real quests live in ~/.airdrop-agent/quests/*.yaml and are
+# imported with `aa quest import <file>`. This file lists starter examples to copy.
+examples:
+  - id: sepolia-checkin
+    name: "Sepolia daily check-in"
+    platform: generic
+    chain: sepolia
+  - id: galxe-daily
+    name: "Galxe daily points"
+    platform: galxe
+  - id: discord-role
+    name: "Discord role grind"
+    platform: generic

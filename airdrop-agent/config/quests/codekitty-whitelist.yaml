@@ -1,0 +1,11 @@
+id: codekitty-whitelist
+name: Code Kitty whitelist
+url: https://codekitty.xyz/
+platform: custom
+steps:
+- goto: '{{url}}'
+- click: Tap to continue
+- wallet:
+    connect: true
+- manual: finish the terminal intro and mint/whitelist
+- screenshot: codekitty

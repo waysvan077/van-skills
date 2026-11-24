@@ -1,0 +1,15 @@
+id: galxe-daily
+name: Galxe daily points
+url: https://app.galxe.com/quest/example
+platform: galxe
+cooldown_hours: 24
+captcha: true
+steps:
+  - goto: "{{url}}"
+  - dismiss: true
+  - wallet: {connect: true}
+  - form: {email: "{{email}}"}
+  - click: "Verify"
+  - assert_text: "completed"
+  - screenshot: "galxe-daily"
+  - checkin: galxe-daily

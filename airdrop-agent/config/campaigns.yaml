@@ -1,0 +1,13 @@
+# On-chain activity campaigns used by `aa testnet campaign` and autopilot.
+campaigns:
+  daily:
+    - {chain: sepolia, do: tx, to_self: true, amount: [0.0002, 0.0008]}
+    - {chain: base-sepolia, do: tx, to_self: true, amount: [0.0002, 0.0008]}
+  warmup:
+    - {chain: sepolia, do: deploy, kind: counter}
+    - {chain: sepolia, do: tx, to_self: true, amount: [0.0005, 0.002]}
+    - {chain: base-sepolia, do: deploy, kind: erc20}
+    - {chain: base-sepolia, do: tx, to_self: true, amount: [0.0004, 0.001]}
+  faucet-only:
+    - {chain: sepolia, do: faucet}
+    - {chain: base-sepolia, do: faucet}

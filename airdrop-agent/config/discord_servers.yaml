@@ -1,0 +1,17 @@
+# Discord servers to grind. User-token automation → dedicated account only.
+# level_bot = the bot that posts level-up messages (MEE6/Arcane/Tatsu…).
+# gap_minutes = human pause range between messages. max_per_hour guards the burst.
+servers:
+  example-server:
+    name: "Example Server"
+    id: "000000000000000000"
+    enabled: false
+    channels:
+      - {name: "general", weight: 3}
+      - {name: "crypto-talk", weight: 2}
+      - {name: "off-topic", weight: 1}
+    target_role: "Active"
+    target_level: 5
+    level_bot: "MEE6"
+    gap_minutes: [4, 11]
+    max_per_hour: 10

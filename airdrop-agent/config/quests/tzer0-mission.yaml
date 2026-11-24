@@ -1,0 +1,9 @@
+id: tzer0-mission
+name: Tzero mission control
+url: https://testnet.tzer0.fun/
+platform: custom
+steps:
+- goto: '{{url}}'
+- dismiss: true
+- manual: connect and run a mission (page is heavy, give it time)
+- screenshot: tzer0

@@ -1,0 +1,16 @@
+id: whisk-swap
+name: Whisk swap
+url: https://whisk.exchange/
+platform: custom
+chain: sepolia
+cooldown_hours: 24
+steps:
+- goto: '{{url}}'
+- wallet:
+    connect: true
+- fill:
+    selector: input[type=text]
+    value: '0.01'
+- click: ⇅
+- manual: pick a token and confirm the swap
+- screenshot: whisk

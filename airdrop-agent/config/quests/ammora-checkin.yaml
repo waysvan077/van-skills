@@ -1,0 +1,13 @@
+id: ammora-checkin
+name: Ammora Season 2 check-in
+url: https://ammora.org/waitlist
+platform: custom
+cooldown_hours: 24
+steps:
+- goto: '{{url}}'
+- dismiss: true
+- wallet:
+    connect: true
+- click: Check in
+- manual: verify X if asked, then confirm the daily check-in
+- screenshot: ammora

@@ -1,0 +1,10 @@
+id: syqora-register
+name: Syqora airdrop registration
+url: https://airdrop.syqora.app/register
+platform: custom
+steps:
+- goto: '{{url}}'
+- form: {}
+- click: Create account
+- manual: confirm the email if Syqora sends one
+- screenshot: syqora

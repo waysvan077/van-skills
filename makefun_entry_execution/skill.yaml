@@ -1,0 +1,28 @@
+name: makefun_entry_execution
+title: Make.fun Bounty Entry Execution
+description: Enter a make.fun bounty in one witnessed session without a delegated-helper stop or a superseded entry, and when to use it.
+category: Work and knowledge
+include_in_prompt: false
+skill_improvement:
+  managed: true
+  status: active
+  evidence_handles:
+  - a535f275
+  - 99a44505
+  - b993c043
+  - cb87df74
+  - d6ef49b9
+  - 329513d0
+  - 3c607465
+  - 3a26d59e
+  - 4e61bedf
+  - runtime-child:89e469c6-5c10-5495-847c-646ca4464091
+  measurement:
+    proxy_metric_id: objective_success_rate
+    success_criterion: At least 80 percent of make.fun entries submitted in the window reach a sealed submission on the first witnessed attempt with no helper security-gate stop and no thinking_reproduces or seal rejection, compared with multiple such stops and rejections across the 2026-11-23 to 2026-11-24 entries.
+    window_days: 14
+  needs_review: false
+  rationale: Across 2026-11-23 to 2026-11-24 delegated helpers repeatedly stopped on the security gate for official make.fun kit and vendor files even after the user approved the work, including the card-game vendor file, the BTC race variant, tiny-chess twice, one-liner batches and the GTA 3D submit. Separately, witnessed entries were rejected at the seal and thinking gates when a recorder died, a session log was rewritten, or a bundle carried old sessions predating the competition, and the fixes that worked were a fast build in one witnessed session with an immediate seal and a clean rebundle from the builder session alone. Van also first told the user a 3D entry would not cancel a 2D entry, which was wrong under Force Last, and the counted entry only became the 3D resubmission after an explicit user approval. The existing makefun_recording_seal skill covers seal mechanics but does not cover delegation routing, start-after-open timing, bundle scope, or Force Last, so this new skill codifies those four uncovered rules and links to that seal skill instead of repeating it. This repair keeps the Bangun division intact by delegating to one Bangun builder, and keeps the seal boundary intact by keeping the lead silent while the builder does all build and seal work, with approval and kit verification carried in the builder brief before recording starts.
+  review_after: 2026-12-08T04:55:33.491213+00:00
+  reviewed_at: 2026-11-24T04:55:33.491213+00:00
+  run_id: sirun_ff333c2668574a63b4093eacdfd17c9b

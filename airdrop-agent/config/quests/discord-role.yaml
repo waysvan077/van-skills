@@ -1,0 +1,10 @@
+id: discord-role
+name: Discord role grind
+url: https://discord.com/channels/000000000000000000
+platform: generic
+cooldown_hours: 12
+steps:
+  - goto: "{{url}}"
+  - manual: "login Discord di profil ini, lalu jalankan: aa dc grind --identity <id> --server <server>"
+  - screenshot: "discord-role"
+  - checkin: discord-role

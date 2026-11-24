@@ -1,0 +1,49 @@
+# Faucet catalog. `field` is a CSS selector for the address input.
+# Selectors rot — the runner falls back to label matching, then screenshots for a human.
+faucets:
+  sepolia-alchemy:
+    chain: sepolia
+    url: https://sepoliafaucet.com/
+    field: 'input[name="address"]'
+    submit: Send
+    cooldown_hours: 24
+    enabled: true
+    note: needs a free Alchemy account + login in the browser profile
+  base-sepolia-portal:
+    chain: base-sepolia
+    url: https://portal.coinbase.com/faucets/base-ethereum-sepolia-faucet
+    field: 'input[placeholder*="0x"], input[name="address"]'
+    submit: Send
+    cooldown_hours: 24
+    enabled: true
+    note: needs a Coinbase login in the browser profile
+  arb-sepolia-chainlink:
+    chain: arbitrum-sepolia
+    url: https://faucets.chain.link/arbitrum-sepolia
+    field: 'input[placeholder*="0x"], input[name="address"]'
+    submit: Send tokens
+    cooldown_hours: 24
+    enabled: true
+    note: sometimes gated by GitHub/X login; captcha solver helps
+  op-sepolia-superchain:
+    chain: optimism-sepolia
+    url: https://console.optimism.io/faucet
+    field: 'input[placeholder*="0x"]'
+    submit: Send
+    cooldown_hours: 24
+    enabled: false
+  monad-faucet:
+    chain: monad-testnet
+    url: https://faucet.monad.xyz/
+    field: 'input[placeholder*="0x"]'
+    submit: Send
+    cooldown_hours: 12
+    enabled: true
+  solana-devnet:
+    chain: solana-devnet
+    url: https://faucet.solana.com/
+    field: 'input[placeholder*="address"], input[name="address"]'
+    submit: Send
+    cooldown_hours: 8
+    enabled: true
+    note: browser flow; the CLI can also hit the devnet RPC airdrop directly

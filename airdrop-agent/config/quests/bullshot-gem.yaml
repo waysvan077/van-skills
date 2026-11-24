@@ -1,0 +1,12 @@
+id: bullshot-gem
+name: Bullgem mining
+url: https://gem.bullshot.io/
+platform: custom
+cooldown_hours: 24
+steps:
+- goto: '{{url}}'
+- dismiss: true
+- wallet:
+    connect: true
+- manual: start mining / claim the daily gem
+- screenshot: bullshot

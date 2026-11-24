@@ -1,0 +1,11 @@
+id: ducat-vault
+name: Ducat vault
+url: https://app.ducatprotocol.com/
+platform: custom
+steps:
+- goto: '{{url}}'
+- click: Essential only
+- wallet:
+    connect: true
+- manual: open Your Vault and deposit
+- screenshot: ducat

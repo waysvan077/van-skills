@@ -1,0 +1,15 @@
+id: sepolia-daily
+name: Sepolia daily check-in
+url: https://sepolia-faucet.example/
+platform: generic
+chain: sepolia
+cooldown_hours: 24
+max_fail: 3
+steps:
+  - goto: "{{url}}"
+  - dismiss: true
+  - wallet: {connect: true, chain: sepolia}
+  - click: "Check in"
+  - assert_text: "Checked in"
+  - screenshot: "sepolia-daily"
+  - checkin: sepolia-daily

@@ -1,0 +1,13 @@
+id: oripa-raffle
+name: oripa.xyz raffle entry
+url: https://oripa.xyz/
+platform: custom
+steps:
+- goto: '{{url}}'
+- dismiss: true
+- fill:
+    selector: input[type=email]
+    value: '{{email}}'
+- click: get in first
+- assert_text: raffle
+- screenshot: oripa

@@ -1,0 +1,48 @@
+# Radar sources. `trust` raises score (3 = official project account, 1 = aggregator).
+# auto_join / auto_follow let the autopilot follow the source itself.
+min_score: 55
+x_search_enabled: false            # browser search costs time; enable deliberately
+caps:
+  x_reads_per_day: 400
+auto_queue: true
+tg_channels:
+  - target: "@airdrop_alert"
+    trust: 1
+    auto_join: true
+  - target: "@cryptoairdrop"
+    trust: 1
+    auto_join: true
+  - target: "@Galxe"
+    trust: 2
+    auto_join: true
+  - target: "@Layer3"
+    trust: 2
+    auto_join: false
+x_accounts:
+  - handle: "base"
+    trust: 2
+    auto_follow: true
+  - handle: "arbitrum"
+    trust: 2
+    auto_follow: true
+  - handle: "solana"
+    trust: 2
+    auto_follow: true
+  - handle: "monad_xyz"
+    trust: 2
+    auto_follow: true
+  - handle: "galxe"
+    trust: 2
+    auto_follow: false
+  - handle: "layer3xyz"
+    trust: 2
+    auto_follow: false
+  - handle: "zealy_io"
+    trust: 1
+    auto_follow: false
+x_queries:
+  - "airdrop testnet live"
+  - "whitelist mint free"
+  - "points program season"
+  - "testnet quest galxe"
+keywords: [airdrop, testnet, whitelist, quest, points, mint, role]

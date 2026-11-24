@@ -1,0 +1,12 @@
+id: folester-play
+name: Folester frames
+url: https://www.folester.xyz/play
+platform: custom
+cooldown_hours: 24
+steps:
+- goto: '{{url}}'
+- dismiss: true
+- wallet:
+    connect: true
+- manual: play a round and claim rewards
+- screenshot: folester

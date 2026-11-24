@@ -1,0 +1,11 @@
+id: polyester-trade
+name: Polyester testnet trade
+url: https://testnet.polyester.com/
+platform: custom
+steps:
+- goto: '{{url}}'
+- dismiss: true
+- wallet:
+    connect: true
+- manual: place a small testnet trade
+- screenshot: polyester

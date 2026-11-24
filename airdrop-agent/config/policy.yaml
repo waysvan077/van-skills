@@ -1,0 +1,144 @@
+# ~/.airdrop-agent/policy.yaml — hard limits. Edit freely; every value is enforced.
+# mode: safe | balanced | turbo   (aa mode ...)  — balanced is the default.
+#   safe      = approval code for every connect/sign/tx/deploy
+#   balanced  = testnet inside caps is automatic, mainnet + permits + unknown contracts gate
+#   turbo     = everything inside caps is automatic (hard blocks still apply)
+
+allow_mainnet: false                # flip true to let mainnet tx run (tiny caps below)
+allow_deploy_mainnet: false
+auto_allowlist_domains: true        # scam_check == ok → domain may be auto-added in turbo
+
+chains:
+  sepolia:
+    chain_id: 11155111
+    rpc: https://ethereum-sepolia-rpc.publicnode.com
+    rpc_env: RPC_SEPOLIA
+    testnet: true
+    native: ETH
+    explorer: https://sepolia.etherscan.io
+    max_tx_native: 0.05
+    max_daily_native: 0.4
+    max_gas_native: 0.01
+  base-sepolia:
+    chain_id: 84532
+    rpc: https://sepolia.base.org
+    rpc_env: RPC_BASE_SEPOLIA
+    testnet: true
+    native: ETH
+    explorer: https://sepolia.basescan.org
+    max_tx_native: 0.05
+    max_daily_native: 0.4
+    max_gas_native: 0.005
+  arbitrum-sepolia:
+    chain_id: 421614
+    rpc: https://sepolia-rollup.arbitrum.io/rpc
+    rpc_env: RPC_ARB_SEPOLIA
+    testnet: true
+    native: ETH
+    explorer: https://sepolia.arbiscan.io
+    max_tx_native: 0.05
+    max_daily_native: 0.4
+    max_gas_native: 0.005
+  optimism-sepolia:
+    chain_id: 11155420
+    rpc: https://sepolia.optimism.io
+    rpc_env: RPC_OP_SEPOLIA
+    testnet: true
+    native: ETH
+    explorer: https://sepolia-optimism.etherscan.io
+    max_tx_native: 0.05
+    max_daily_native: 0.4
+    max_gas_native: 0.005
+  monad-testnet:
+    chain_id: 10143
+    rpc: https://testnet-rpc.monad.xyz
+    rpc_env: RPC_MONAD_TESTNET
+    testnet: true
+    native: MON
+    explorer: https://testnet.monadexplorer.com
+    max_tx_native: 5
+    max_daily_native: 40
+    max_gas_native: 1
+  solana-devnet:
+    kind: solana
+    chain_id: 0
+    rpc: https://api.devnet.solana.com
+    rpc_env: RPC_SOL_DEVNET
+    testnet: true
+    native: SOL
+    native_decimals: 9
+    explorer: https://explorer.solana.com/?cluster=devnet
+    max_tx_native: 0.2
+    max_daily_native: 2
+    max_gas_native: 0.001
+  base:
+    chain_id: 8453
+    rpc: https://mainnet.base.org
+    rpc_env: RPC_BASE
+    testnet: false
+    native: ETH
+    explorer: https://basescan.org
+    max_tx_native: 0.001
+    max_daily_native: 0.004
+    max_gas_native: 0.0004
+  arbitrum:
+    chain_id: 42161
+    rpc: https://arb1.arbitrum.io/rpc
+    rpc_env: RPC_ARB
+    testnet: false
+    native: ETH
+    explorer: https://arbiscan.io
+    max_tx_native: 0.001
+    max_daily_native: 0.004
+    max_gas_native: 0.0004
+  solana:
+    kind: solana
+    chain_id: 0
+    rpc: https://api.mainnet-beta.solana.com
+    rpc_env: RPC_SOL
+    testnet: false
+    native: SOL
+    native_decimals: 9
+    explorer: https://explorer.solana.com
+    max_tx_native: 0.02
+    max_daily_native: 0.05
+    max_gas_native: 0.001
+
+# Addresses the agent may call without asking (verify from official docs!)
+contracts_allowlist:
+  sepolia: []
+  base-sepolia: []
+  arbitrum-sepolia: []
+  optimism-sepolia: []
+  monad-testnet: []
+  base: []
+  arbitrum: []
+
+blocklist: []                      # known drainers / wrong addresses
+domain_allowlist:                  # SIWE + wallet connect allowed without a gate
+  - galxe.com
+  - zealy.io
+  - layer3.xyz
+  - questn.com
+  - intract.io
+  - guild.xyz
+  - opensea.io
+  - uniswap.org
+  - aerodrome.finance
+  - jupiter.ag
+  - rabby.io
+
+limits:
+  gate_ttl_minutes: 720
+  max_gate_per_run: 5
+
+turbo:
+  allow_mainnet: false             # true = mainnet tx also auto inside the caps below
+  allow_permits: false             # true = Permit/Permit2/Seaport auto-signs (riskier)
+  chains:                          # wider caps only while mode=turbo
+    sepolia: {max_tx_native: 0.1, max_daily_native: 1.0, max_gas_native: 0.02}
+    base-sepolia: {max_tx_native: 0.1, max_daily_native: 1.0, max_gas_native: 0.01}
+    arbitrum-sepolia: {max_tx_native: 0.1, max_daily_native: 1.0, max_gas_native: 0.01}
+    optimism-sepolia: {max_tx_native: 0.1, max_daily_native: 1.0, max_gas_native: 0.01}
+    monad-testnet: {max_tx_native: 10, max_daily_native: 80, max_gas_native: 2}
+    solana-devnet: {max_tx_native: 0.5, max_daily_native: 5, max_gas_native: 0.002}

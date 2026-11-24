@@ -1,0 +1,13 @@
+id: nilly-faucet
+name: nilly Base Sepolia faucet
+url: https://testnet.nilly.fun/#/faucet
+platform: custom
+chain: base-sepolia
+cooldown_hours: 24
+steps:
+- goto: '{{url}}'
+- wallet:
+    connect: true
+- click: GET TEST ETH
+- manual: complete the faucet if it opens a new tab
+- screenshot: nilly

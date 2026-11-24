@@ -1,0 +1,9 @@
+id: vapi-earn
+name: vAPI Network earn quests
+url: https://api.vapinetwork.ai/earn/quests
+platform: custom
+steps:
+- goto: '{{url}}'
+- dismiss: true
+- manual: sign in (Google, email or wallet), then finish the earn quests
+- screenshot: vapi

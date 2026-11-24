@@ -1,0 +1,13 @@
+id: dow-points
+name: DOW Protocol quests
+url: https://app.dowprotocol.com/points
+platform: custom
+cooldown_hours: 24
+steps:
+- goto: '{{url}}'
+- dismiss: true
+- wallet:
+    connect: true
+- click: Start Quiz
+- manual: answer the quiz, then claim XP
+- screenshot: dow

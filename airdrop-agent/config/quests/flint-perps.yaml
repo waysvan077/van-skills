@@ -1,0 +1,11 @@
+id: flint-perps
+name: Flint devnet perps
+url: https://devnet.app.flint.trade/perps
+platform: custom
+steps:
+- goto: '{{url}}'
+- dismiss: true
+- wallet:
+    connect: true
+- manual: open a small perp position and close it
+- screenshot: flint
