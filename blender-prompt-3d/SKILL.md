@@ -5,7 +5,11 @@ description: One-shot prompt → 3D render — drive Blender headlessly with a p
 
 # Blender Prompt 3D — one-shot prompt to branded render
 
-Distilled from the "Gemini Neon" GT-R demo Ways shared (satyaXBT, 2026-11-25): an LLM writes ONE Python script, Blender executes it headlessly, out comes a finished 3D render. No manual modelling, no external model downloads — everything procedural. First run VALIDATED 2026-11-25: the VAN-Unit 07 pink car — Blender 4.2.9 LTS, script `~/workspace/tools/blender-car/build_car.py`, render `~/workspace/imagine_media/van07-car-render.png` (1280×720, pink dominant, door decal correct). Two VM lessons from that run: (1) the VM lacks libEGL — extract Ubuntu 24.04 Mesa/glvnd .debs into `~/workspace/tools/blender/syslibs/`; (2) Eevee still would not initialize (EGL_BAD_PARAMETER), so the Cycles fallback (CPU, 64 samples, adaptive sampling + OpenImageDenoise, ~4 min/render) is the realistic default on this VM, not the exception.
+Distilled from the "Gemini Neon" GT-R demo Ways shared (satyaXBT, 2026-11-25): an LLM writes ONE Python script, Blender executes it headlessly, out comes a finished 3D render. No manual modelling, no external model downloads — everything procedural. First run 2026-11-25: the VAN-Unit 07 pink car — Blender 4.2.9 LTS, script `~/workspace/tools/blender-car/build_car.py`, render completed (1280×720, pink dominant, door decal correct) BUT **Ways rejected the output: "jelek banget", far below the reference**. The outputs were deleted at his order.
+
+**QUALITY CEILING — read before promising anything:** procedural primitives on this VM produce STYLIZED / toy-like results, nowhere near a detailed realistic vehicle like the demo's GT-R (which almost certainly was not pure primitives either, whatever the post claims). If the user wants realism or parity with a polished reference, SAY SO UP FRONT and do not build first and apologize after — Ways's standing complaint (2026-11-25): "Kalau ga bisa bilang aja ga bisa". This method is honest for: stylized/low-poly looks, simple props, logos/mascots in 3D, quick branded mockups. It is NOT a route to realistic cars/characters on this hardware.
+
+Two VM lessons from that run: (1) the VM lacks libEGL — extract Ubuntu 24.04 Mesa/glvnd .debs into `~/workspace/tools/blender/syslibs/`; (2) Eevee still would not initialize (EGL_BAD_PARAMETER), so the Cycles fallback (CPU, 64 samples, adaptive sampling + OpenImageDenoise, ~4 min/render) is the realistic default on this VM, not the exception.
 
 ## Setup on this VM
 
