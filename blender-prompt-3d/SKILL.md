@@ -5,7 +5,7 @@ description: One-shot prompt → 3D render — drive Blender headlessly with a p
 
 # Blender Prompt 3D — one-shot prompt to branded render
 
-Distilled from the "Gemini Neon" GT-R demo Ways shared (satyaXBT, 2026-11-25): an LLM writes ONE Python script, Blender executes it headlessly, out comes a finished 3D render. No manual modelling, no external model downloads — everything procedural. First run: the VAN-Unit 07 pink car (2026-11-25, in flight when this skill was saved — update this line with the verdict).
+Distilled from the "Gemini Neon" GT-R demo Ways shared (satyaXBT, 2026-11-25): an LLM writes ONE Python script, Blender executes it headlessly, out comes a finished 3D render. No manual modelling, no external model downloads — everything procedural. First run VALIDATED 2026-11-25: the VAN-Unit 07 pink car — Blender 4.2.9 LTS, script `~/workspace/tools/blender-car/build_car.py`, render `~/workspace/imagine_media/van07-car-render.png` (1280×720, pink dominant, door decal correct). Two VM lessons from that run: (1) the VM lacks libEGL — extract Ubuntu 24.04 Mesa/glvnd .debs into `~/workspace/tools/blender/syslibs/`; (2) Eevee still would not initialize (EGL_BAD_PARAMETER), so the Cycles fallback (CPU, 64 samples, adaptive sampling + OpenImageDenoise, ~4 min/render) is the realistic default on this VM, not the exception.
 
 ## Setup on this VM
 
